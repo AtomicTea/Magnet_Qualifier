@@ -42,12 +42,24 @@ $(document).ready(function() {
     "YWCPA": 66
   };
 
-  $('#eligibleModal').on('show.bs.modal', function (event) {
-    var score =  0;
-    var answers = $('#mqc').serializeArray();
-    $.each(answers, function( index, obj ) {
-      score += +obj.value;
+  function sum(array) {
+    var total = 0;
+    $.each(array, function(index, obj) {
+      total += +obj.value;
     });
+    return total;
+  }
+
+  function calculateScore() {
+    var other = sum($('.grades, .considerations').serializeArray());
+    var staar = sum($('.staar').serializeArray());
+    var iowa  = sum($('.iowa').serializeArray());
+    console.log("other: " + other + " staar: " + staar + " iowa:" + iowa);
+    return staar >= iowa ? staar + other : iowa + other;
+  }
+
+  $('#eligibleModal').on('show.bs.modal', function (event) {
+    var score = calculateScore();
     console.log("score = " + score);
     $.each(schools, function (school, cutoff) {
       if (score >= cutoff) {
@@ -60,16 +72,4 @@ $(document).ready(function() {
   $('#btn-print').on('click', function () {
     window.print();
   });
-  // $("#eligibleModal").printThis({
-  //     debug: true,
-  //     importCSS: true,
-  //     importStyle: true,
-  //     printContainer: true,
-  //     loadCSS: "css/bootstrap.min.css",
-  //     pageTitle: "Eligible Magnet Schools",
-  //     removeInline: false,
-  //     printDelay: 333,
-  //     header: null,
-  //     formValues: true
-  // });
 });
