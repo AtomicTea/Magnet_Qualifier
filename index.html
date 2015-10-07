@@ -40,10 +40,41 @@
     <div class="container-fluid">
       <div class="col-xs-12">
         <form id="mqc">
+        <div class="form-group">
+
+            <label for="gradelevel">Grade level</label>
+            <select id="gradelevel" name="gradelevel" class="form-control gradelevel">
+              <option value="6">
+                6th Grade
+              </option>
+              <option value="7">
+                7th Grade
+              </option>
+              <option value="8">
+                8th Grade
+              </option>
+              <option value="9">
+                9th Grade
+              </option>
+              <option value="10">
+                10th Grade
+              </option>
+              <option value="11">
+                11th Grade
+              </option>
+              <option value="12">
+                12th Grade
+              </option>
+              <option value="V">
+                Vanguard
+              </option>
+              <option value="FA">
+                Fine Arts
+              </option>
+            </select>
+          </div>
           <div class="form-group">
-            <h4>
-              Academics
-            </h4>
+
             <label for="grades">Grades</label>
             <select id="grades" name="grades" class="form-control grades">
               <option value="40">
@@ -65,6 +96,7 @@
           </div>
           <div class="form-group">
             <label for="staar-reading">STAAR Scores Reading</label>
+            <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
             <select id="staar-reading" name="staar-reading" class="form-control staar">
               <option value="30">
                 Level III
@@ -82,6 +114,7 @@
           </div>
           <div class="form-group">
             <label for="staar-math">STAAR Scores Math</label>
+            <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
             <select id="staar-math" name="staar-math" class="form-control staar">
               <option value="30">
                 Level III
@@ -138,7 +171,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="considerations" value="8" class="considerations">
-                Are you Limited English Proficiency <em>(LEP)</em> or low socioeconomic status <em>(SES)</em>?
+                Check here if your child is identified as  Limited English Proficiency <em>(LEP)</em> or is on free or reduced-price lunch.
               </label>
             </div>
           </div>
