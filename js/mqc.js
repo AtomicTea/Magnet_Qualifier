@@ -1,45 +1,48 @@
 $(document).ready(function() {
   var schools = {
-    "Austin (Maritime) HS": 50,
-    "Austin (Teaching) HS": 50,
-    "Bellaire HS": 80,
-    "Challenge Early College HS": 75,
+    "*Baylor College of Medicine at Ryan MS(6th, 7th only)": 0,
+	"*Black Vanguard MS": 0,
+	"*Garden Oaks (6-8) MS": 0,
+	"Hartman MS": 70,
+    "Hogg MS": 55,
+	"Pin Oak MS": 80,
+	"Revere MS": 60,
+	"Rice 6-8 MS": 80,
+	"Rusk (6-8) MS": 70,
+	"Stevenson MS": 80,
+	"*Wilson MS (6th, 7th only)": 0,
+	"Austin (Maritime) HS (9th, 10th only)": 50,
+    "Austin (Teaching)HS(9th, 10th only)": 50,
+    "Bellaire HS (9th only)": 80,
+    "Challenge Early College HS (9th, 10th only)": 75,
     "Chavez HS": 70,
-    "Clifton HS": 50,
-    "Davis HS": 66,
-    "DeBakey HS": 80,
-    "East Early College HS": 66,
-    "Garden Oaks (6-8)": 66,
-    "HAIS HS": 66,
-    "Hartman MS": 70,
-    "Hogg MS": 66,
-    "HS for LECJ": 68,
-    "Jones HS": 65,
-    "Lamar HS": 80,
-    "Long Academy (AHP) ": 70,
-    "Long Academy (Futures)": 60,
-    "Mickey Leland College Prep Academy": 66,
-    "Milby HS": 66,
-    "North Houston Early College HS": 66,
-    "Pin Oak MS": 80,
-    "Reagan HS": 66,
-    "Revere MS": 66,
-    "Rice 6-8": 66,
-    "Rusk (6-8)": 70,
-    "Scarborough HS": 60,
-    "Sharpstown Int'l": 66,
-    "Sterling (Aviation) HS": 66,
-    "Sterling (Futures) HS": 66,
-    "Stevenson MS": 66,
-    "Waltrip HS": 66,
-    "Washington (Eng.) HS": 70,
-    "Washington (Futures) HS": 70,
-    "Westside (Futures) HS": 80,
-    "Westside (Tech.) HS": 75,
-    "Wilson (6-8) MS": 0,
-    "Yates (Comm.) HS": 66,
-    "Yates (Futures) HS": 66,
-    "Young Women's College Prep Academy": 66
+    "Clifton": 50,
+    "Davis HS (9th, 10th only)": 65,
+    "DeBakey HS (9th only)": 80,
+    "East Early College HS (9th, 10th only)": 76,
+    "HAIS HS": 75,
+    "HSLECJ HS (9th, 10th only)": 68,
+    "Jones HS (9th only)": 65,
+    "Lamar HS (9th only)": 80,
+    "Long Academy (AHP) HS ": 70,
+    "Long Academy (Futures)HS 9th, 10th only)": 60,
+    "Mickey Leland HS": 70,
+    "Milby HS ": 70,
+    "North Houston Early College HS (9th, 10th only)": 75,
+    "Reagan HS (9th, 10th)": 80,
+    "Scarborough HS (9th, 10th only)": 60,
+    "Sharpstown Int'l HS (9th, 10th, 11th only)": 65,
+	  "*South Early College HS (9th, 10th only)": 0,
+    "Sterling (Aviation) HS": 0,
+    "Sterling (Futures) HS": 60,
+    "Waltrip HS ": 60,
+    "Washington (Eng.) HS (9th, 10th only)": 70,
+    "Washington (Futures) HS (9th, 10th, 11th only)": 70,
+    "Westside (Futures) HS (9th, 10th only)": 80,
+    "Westside (Tech.) HS (9th, 10th only)": 75,
+    "Yates (Comm.) HS": 67,
+    "Yates (Futures) HS": 67,
+    "YWCPA HS (6th - 11th only) ": 80
   };
 
   function sum(array) {
@@ -58,20 +61,23 @@ $(document).ready(function() {
     return staar >= iowa ? staar + other : iowa + other;
   }
 
+
   $('#eligibleModal').on('show.bs.modal', function (event) {
     var score = calculateScore();
     console.log("score = " + score);
-    //Test grep command for separating hs or ms
-
-    schools = $.grep($.map(schools, function(v,k){ return k;}), function(elem) { return (elem.search("HS") > -1);});
-    ["Challenge ECHS", "East ECHS", "HSLECJ", "North Houston ECHS"]
-    
-    // end test grep command
     $.each(schools, function (school, cutoff) {
       if (score >= cutoff) {
         $('#result-list').append('<li  class="list-group-item">'+ school + '</li>');
       }
     });
+    
+  $( "select option:selected" )
+    .filter(function( index ) {
+      return $( "#result-list", this ).css( "background-color", "red" );
+    })
+      
+    
+    
   }).on('hidden.bs.modal', function (event) {
     $('#result-list').empty();
   });

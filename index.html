@@ -40,10 +40,29 @@
     <div class="container-fluid">
       <div class="col-xs-12">
         <form id="mqc">
+        <div class="form-group">
+            
+            <label for="gradelevel">Grade level</label>
+            <select id="gradelevel" name="gradelevel" class="form-control gradelevel">
+              <option value="ES">
+                Elementary schools
+              </option>
+              <option value="MS">
+                Middle schools
+              </option>
+              <option value="HS">
+                High schools
+              </option>
+              <option value="V">
+                Vanguard
+              </option>
+              <option value="FA">
+                Fine Arts
+              </option>
+            </select>
+          </div>
           <div class="form-group">
-            <h4>
-              Academics
-            </h4>
+            
             <label for="grades">Grades</label>
             <select id="grades" name="grades" class="form-control grades">
               <option value="40">
@@ -65,7 +84,7 @@
           </div>
           <div class="form-group">
             <label for="staar-reading">STAAR Scores Reading</label>
-            <a href="http://tea.texas.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=25769815899&libID=25769815947" target="New""> Explanation of levels and phase-ins (.pdf)</a> 
+            <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
             <select id="staar-reading" name="staar-reading" class="form-control staar">
               <option value="30">
                 Level III
@@ -83,7 +102,7 @@
           </div>
           <div class="form-group">
             <label for="staar-math">STAAR Scores Math</label>
-            <a href="http://tea.texas.gov/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=25769815899&libID=25769815947" target="New""> Explanation of levels and phase-ins (.pdf)</a> 
+            <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
             <select id="staar-math" name="staar-math" class="form-control staar">
               <option value="30">
                 Level III
@@ -140,7 +159,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="considerations" value="8" class="considerations">
-                Has your child been identified as Limited English Proficiency <em>(LEP)</em> or does your child receive free or reduced-price lunch?
+                Check here if your child is identified as  Limited English Proficiency <em>(LEP)</em> or is on free or reduced-price lunch.
               </label>
             </div>
           </div>
