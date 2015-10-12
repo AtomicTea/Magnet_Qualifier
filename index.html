@@ -42,8 +42,9 @@
         <form id="mqc">
         <div class="form-group">
 
-            <label for="gradelevel">Grade level</label>
-            <select id="gradelevel" name="gradelevel" class="form-control gradelevel">
+            <label for="gradelevel" class="required">Grade level</label>
+            <select id="gradelevel" name="gradelevel" class="form-control gradelevel" required>
+              <option value="">Please select the grade level you will be entering</option>
               <option value="6">
                 6th Grade
               </option>
@@ -75,8 +76,9 @@
           </div>
           <div class="form-group">
 
-            <label for="grades">Grades</label>
-            <select id="grades" name="grades" class="form-control grades">
+            <label class="required" for="grades">Grades</label>
+            <select id="grades" name="grades" class="form-control grades" required>
+              <option value="">Please select your grade</option>
               <option value="40">
                 100-90
               </option>
@@ -94,88 +96,94 @@
               </option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="staar-reading">STAAR Scores Reading</label>
-            <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
-            <select id="staar-reading" name="staar-reading" class="form-control staar">
-              <option value="30">
-                Level III
-              </option>
-              <option value="25">
-                Level II Phase-in 2
-              </option>
-              <option value="20">
-                Level II Phase-in 1
-              </option>
-              <option value="0">
-                Level I Phase-in 1
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="staar-math">STAAR Scores Math</label>
-            <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
-            <select id="staar-math" name="staar-math" class="form-control staar">
-              <option value="30">
-                Level III
-              </option>
-              <option value="25">
-                Level II Phase-in 2
-              </option>
-              <option value="20">
-                Level II Phase-in 1
-              </option>
-              <option value="0">
-                Level I Phase-in 1
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="iowa-reading">Iowa/Logramos National Percentile Rank Reading</label>
-            <select id="iowa-reading" name="iowa-reading" class="form-control iowa">
-              <option value="30">
-                80 or Higher
-              </option>
-              <option value="25">
-                79-60
-              </option>
-              <option value="20">
-                59-40
-              </option>
-              <option value="0">
-                Below 40
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="iowa-math">Iowa/Logramos National Percentile Rank Math</label>
-            <select id="iowa-math" class="form-control iowa" name="iowa-math">
-              <option value="30">
-                80 or Higher
-              </option>
-              <option value="25">
-                79-60
-              </option>
-              <option value="20">
-                59-40
-              </option>
-              <option value="0">
-                Below 40
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <h4>
-              Special Considerations
-            </h4>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="considerations" value="8" class="considerations">
-                Check here if your child is identified as  Limited English Proficiency <em>(LEP)</em> or is on free or reduced-price lunch.
-              </label>
+          <fieldset id="magnet-schools">
+            <div class="form-group">
+              <label for="staar-reading">STAAR Scores Reading</label>
+              <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
+              <select id="staar-reading" name="staar-reading" class="form-control staar">
+                <option value="0">Please select your score</option>
+                <option value="30">
+                  Level III
+                </option>
+                <option value="25">
+                  Level II Phase-in 2
+                </option>
+                <option value="20">
+                  Level II Phase-in 1
+                </option>
+                <option value="0">
+                  Level I Phase-in 1
+                </option>
+              </select>
             </div>
-          </div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eligibleModal">See eligible schools</button>
+            <div class="form-group">
+              <label for="staar-math">STAAR Scores Math</label>
+              <A href="http://www.houstonisd.org/cms/lib2/TX01001591/Centricity/Domain/21217/Copy of Breakpoints for STAAR 2015 - Parent Version.pdf" target="new">Explanation of breakpoints for STAAR</A>
+              <select id="staar-math" name="staar-math" class="form-control staar">
+                <option value="0">Please select your score</option>
+                <option value="30">
+                  Level III
+                </option>
+                <option value="25">
+                  Level II Phase-in 2
+                </option>
+                <option value="20">
+                  Level II Phase-in 1
+                </option>
+                <option value="0">
+                  Level I Phase-in 1
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="iowa-reading">Iowa/Logramos National Percentile Rank Reading</label>
+              <select id="iowa-reading" name="iowa-reading" class="form-control iowa">
+                <option value="0">Please select your score</option>
+                <option value="30">
+                  80 or Higher
+                </option>
+                <option value="25">
+                  79-60
+                </option>
+                <option value="20">
+                  59-40
+                </option>
+                <option value="0">
+                  Below 40
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="iowa-math">Iowa/Logramos National Percentile Rank Math</label>
+              <select id="iowa-math" class="form-control iowa" name="iowa-math">
+                <option value="0">Please select your score</option>
+                <option value="30">
+                  80 or Higher
+                </option>
+                <option value="25">
+                  79-60
+                </option>
+                <option value="20">
+                  59-40
+                </option>
+                <option value="0">
+                  Below 40
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <h4>
+                Special Considerations
+              </h4>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="considerations" value="8" class="considerations">
+                  Check here if your child is identified as  Limited English Proficiency <em>(LEP)</em> or is on free or reduced-price lunch.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <button id="see-eligible-schools" type="button" class="btn btn-primary" disabled data-toggle="modal" data-target="#eligibleModal">See eligible schools</button>
         </form>
       </div>
     </div>
