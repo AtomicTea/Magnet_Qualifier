@@ -85,8 +85,21 @@ $(document).ready(function() {
     return staar >= iowa ? staar + other : iowa + other;
   }
 
+  $('#gradelevel').on('change', function(event){
+    if ($('#gradelevel').val() == 'V' || $('#gradelevel').val() == 'FA') {
+      $('#magnet-schools').prop('disabled', true);
+    } else {
+       $('#magnet-schools').prop('disabled', false);
+    }
+  });
 
-  $('#eligibleModal').on('show.bs.modal', function (event) {
+  $('select[required]').on('change', function(event){
+    if ($('#gradelevel').val() != '' && $('#grades').val() != '') {
+      $('#see-eligible-schools').prop('disabled', false);
+    }
+  });
+
+  $('#eligibleModal').on('show.bs.modal', function(event) {
     var gradeLevel = $('#gradelevel').val();
     var score;
     if (gradeLevel == "V" || gradeLevel == "FA") {
